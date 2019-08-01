@@ -1,0 +1,23 @@
+{
+  "name": "blog-wangcong",
+  "version": "1.0.0",
+  "description": "My ultimate Nuxt.js project",
+  "author": "wangcong",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt --hostname blog.wangcong.com --port 1316",
+    "build": "nuxt build",
+    "start": "nuxt start --port 1317",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "ant-design-vue": "^1.1.10",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "vue-style-loader": "^4.1.2"
+  }
+}
