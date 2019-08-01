@@ -16,6 +16,8 @@ export default {
     script: [
       { src: 'http://res.wx.qq.com/open/js/jweixin-1.1.0.js'},
       { src:'//code.tidio.co/irncccg0ddbkejvx8en2lvgwcuebnssz.js', type: 'text/javascript', charset: 'utf-8'},
+      { src: './pubu/pixi.min.js'},
+      { src: './pubu/tinycolor.min.js'},
     ],
     __dangerouslyDisableSanitizers: ['script']
   },
