@@ -12,12 +12,14 @@
   },
   "dependencies": {
     "ant-design-vue": "^1.1.10",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "cross-env": "^5.2.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.9",
     "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
-    "vue-style-loader": "^4.1.2"
+    "vue-style-loader": "^4.1.2",
+    "nuxt-fullpage.js": "^0.0.3"
   }
 }

@@ -3,7 +3,7 @@
     <div id="skPlayer"></div>
     <div class="canvasBox">
       <!-- <canvas id='canvas' width="575" height="350"></canvas> -->
-      <span class="skPlayer-close" @click="iscloseSkPlayer = !iscloseSkPlayer"><span v-if="iscloseSkPlayer">Close</span><span v-else>Open</span></span>
+      <span class="skPlayer-close" @click="iscloseSkPlayer = !iscloseSkPlayer"><i class="iconfont icon-yiliao"></i></span>
     </div>
   </div>
 </template>
@@ -100,8 +100,8 @@
 </script>
 <style lang="scss">
 .skPlayer-wrap{
-  top: 5vh;
-  right: 5vw;
+  top: 2vh;
+  right: 2vw;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -138,6 +138,25 @@
     cursor: pointer;
     color: #fff;
     animation: scale-an 2s linear infinite;
+    i{
+      font-size: 28px;
+    }
+    @media screen and (max-width: 750px) {
+      width: 0.7rem;
+      height: 0.7rem;
+      line-height: 0.7rem;
+      i{
+        font-size: 0.5rem;
+      }
+    }
+  }
+  .skPlayer-list{
+    &::-webkit-scrollbar-thumb {//滚动条的设置
+      background-color:#dddddd;
+      background-clip:padding-box;
+      min-height:28px;
+      border-radius: 15px;
+    }
   }
 
 

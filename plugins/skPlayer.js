@@ -1,7 +1,6 @@
 import Vue from 'vue'
-var skPlayer = require('skPlayer');
+// var skPlayer = require('skPlayer');
 export default ({ app, store }) => {
-  console.log('app',app)
   app.player = new skPlayer({
     autoplay: true,
     //可选项,自动播放,默认为false,true/false
@@ -21,4 +20,5 @@ export default ({ app, store }) => {
         // ... playlist?id=317921676
     }
   });
+  console.log('app',app)
 }

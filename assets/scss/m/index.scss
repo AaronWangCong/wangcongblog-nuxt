@@ -1,0 +1,121 @@
+.m-home-wrap{
+  .bg1{
+    background: url('~assets/images/bgimg/m_bg01.gif') no-repeat 100% 100%;
+    background-size: cover;
+    .text{
+      padding: 0 0.3rem;
+      p{
+        opacity: 0;
+        text-align: center;
+        font-size: 0.24rem;
+        color: #fff;
+      }
+      .p2{
+        animation: animateShow 2s 1s linear forwards;
+      }
+      .p3{
+        animation: animateShow 2s 4s linear forwards;
+      }
+      .p4{
+        animation: animateShow 2s 7s linear forwards;
+      }
+      .p5{
+        animation: animateShow 2s 10s linear forwards;
+      }
+      .p6{
+        animation: animateShow 2s 13s linear forwards;
+      }
+      .p7{
+        animation: animateShow 2s 16s linear forwards;
+      }
+      .p8{
+        animation: animateShow 2s 19s linear forwards;
+      }
+      .p9{
+        animation: animateShow 2s 22s linear forwards;
+      }
+      .p10{
+        animation: animateShow 2s 25s linear forwards;
+      }
+      .p11{
+        animation: animateShow 2s 28s linear forwards;
+      }
+    }
+  }
+  .bg2{
+    background: url('~assets/images/bgimg/m_bg02.jpeg') no-repeat 100% 100%;
+    background-size: cover;
+  }
+  .bg3{
+    background: url('~assets/images/bgimg/m_bg03.jpg') no-repeat 100% 100%;
+    background-size: cover;
+  }
+  .bg4{
+    background: url('~assets/images/bgimg/m_bg04.gif') no-repeat 100% 100%;
+    background-size: cover;
+  }
+
+  @keyframes animateShow {
+    form{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+}
+#fp-nav {
+  ul{
+    li{
+      margin: 10px 0;
+      width: 14px;
+      height: 14px;
+      a{
+        transition: all .7s ease;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255, 0.4);
+        position: relative;
+        margin-bottom: 10px; 
+        background-color: none;
+        span{
+          background: #fff;
+          margin: 0;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+        }
+        &:hover{
+        }
+        &.active { 
+          border: 1px solid rgba(255,255,255, 1);
+          span{
+            top: 0;
+            left: 0;
+            transform: translate(0,0);
+            margin: 0;
+            height: 13px;
+            width: 13px;
+          }
+        }
+      }
+      &:hover{
+        a{
+          span{
+            top: 0;
+            left: 0;
+            transform: translate(0,0);
+            margin: 0;
+            height: 12px;
+            width: 13px;
+          }
+          &.active{
+            span{
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
