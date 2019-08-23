@@ -1,8 +1,6 @@
 <template>
-  <div class="">
-    <nuxt-link to="/home">home</nuxt-link>
-    <nuxt-link to="/blog">blog</nuxt-link>
-    <nuxt-link to="/h5c3/pubu">pubu</nuxt-link>
+  <div class="blog-wrap">
+    blog
   </div>
 </template>
 <script>
@@ -12,7 +10,7 @@
     },
     props:{
     },
-    layout:'',
+    layout:'blogLayout',
     data() {
       return {
       }
@@ -28,4 +26,6 @@
   }
 </script>
 <style lang="scss">
+.blog-wrap{
+}
 </style>

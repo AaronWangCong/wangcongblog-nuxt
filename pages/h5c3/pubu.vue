@@ -1,8 +1,6 @@
 <template>
   <div class="">
-    <nuxt-link to="/home">home</nuxt-link>
-    <nuxt-link to="/blog">blog</nuxt-link>
-    <nuxt-link to="/h5c3/pubu">pubu</nuxt-link>
+    pubu
   </div>
 </template>
 <script>

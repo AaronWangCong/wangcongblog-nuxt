@@ -1,5 +1,6 @@
 <template>
   <div class="myworld-wrap">
+    myworld
   </div>
 </template>
 <script>

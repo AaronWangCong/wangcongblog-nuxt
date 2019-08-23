@@ -11,22 +11,25 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.jpg' },
-      { rel: 'stylesheet', type: 'text/css', href: 'http://at.alicdn.com/t/font_956898_eil0vqypdpp.css' },
+      { rel: 'stylesheet', type: 'text/css', href: 'http://at.alicdn.com/t/font_956898_dmazn3p75bp.css' },
     ],
     script: [
       { src: 'http://res.wx.qq.com/open/js/jweixin-1.1.0.js'},
-      { src:'//code.tidio.co/irncccg0ddbkejvx8en2lvgwcuebnssz.js', type: 'text/javascript', charset: 'utf-8'},
-      { src: './pubu/pixi.min.js'},
-      { src: './pubu/tinycolor.min.js'},
+      // { src:'//code.tidio.co/irncccg0ddbkejvx8en2lvgwcuebnssz.js', type: 'text/javascript', charset: 'utf-8'},
+      // { src: './pubu/pixi.min.js'},
+      // { src: './pubu/tinycolor.min.js'},
       { src: './skPlayer.min.js'}
     ],
     __dangerouslyDisableSanitizers: ['script']
   },
   loading: { color: '#fff' },
   css: [
-    'ant-design-vue/dist/antd.css'
+    'ant-design-vue/dist/antd.css',
+    '~assets/scss/reset.scss',
+    '~assets/scss/style.scss'
   ],
   plugins: [
+    { src: "@/plugins/element-ui", ssr: true },
     { src: "@/plugins/antd-ui", ssr: true },
     { src: "@/plugins/skPlayer", ssr: false },
     { src: "@/plugins/fullpage", ssr: false },

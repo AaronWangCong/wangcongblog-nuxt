@@ -1,15 +1,20 @@
 <template>
-  <div class="default-wrap">
+  <div class="blogLayout-wrap">
+    <Header />
     <div class="content">
       <nuxt />
     </div>
+    <skPlayer />
   </div>
 </template>
 <script>
   import skPlayer from '../components/skPlayer.vue'
+  import Header from '../components/header.vue'
   export default {
     name: '',
     components: {
+      skPlayer,
+      Header
     },
     props:{
     },
@@ -43,4 +48,9 @@
   }
 </script>
 <style lang="scss">
+.blogLayout-wrap{
+  .content{
+    padding-top: 80px;
+  }
+}
 </style>

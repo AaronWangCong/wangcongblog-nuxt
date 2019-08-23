@@ -1,12 +1,44 @@
 .w {
   width: 1200px;
   margin: 0 auto;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
 }
 body{
   background-color: #fff;
 }
 body, html {
   height: 100%;
-  color: #333;
+  color: #1a1a1a;
   font-size: 14px;
+  background-color: #F5F5F5;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 1s cubic-bezier(0.77,0,0.175,1);
+}
+
+@keyframes colorRandom {
+  0% { color: #f728c3; }
+  12% { color: #f36b2c; }
+  24% { color: #ebbc22; }
+  36% { color: #13d85e; }
+  50% { color: #3c90f0; }
+  62% { color: #13d85e; }
+  74% { color: #ebbc22; }
+  86% { color: #f36b2c; }
+  100% { color: #f728c3; }
+}
+@keyframes bgcolorRandom {
+  0% { background-color: #f728c3; }
+  12% { background-color: #f36b2c; }
+  24% { background-color: #ebbc22; }
+  36% { background-color: #13d85e; }
+  50% { background-color: #3c90f0; }
+  62% { background-color: #13d85e; }
+  74% { background-color: #ebbc22; }
+  86% { background-color: #f36b2c; }
+  100% { background-color: #f728c3; }
 }

@@ -1,0 +1,140 @@
+.home-wrap{
+  .section { 
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .toBottom{
+      position: absolute;
+      bottom: 2vh;
+      left: 50%;
+      transform: translateX(-50%);
+      display: inline-block;
+      z-index: 1001;
+      animation: downTuch 3s infinite;
+      i{
+        color: #fff;
+        font-size: 0.5rem;
+        font-weight: bold;
+      }
+      @media screen and (min-width: 751px) {
+        display: none;
+      }
+    }
+  }
+  .part1{
+    background: url('~assets/images/bgimg/bg_qingchun.jpg') no-repeat 100% 100%;
+    background-size: cover;
+    background-position: center center;
+    @media screen and (max-width: 750px) {
+      background: url('~assets/images/bgimg/m_bg01.gif') no-repeat 100% 100%;
+      background-position: none;
+      background-size: cover;
+      padding: 0;
+    }
+    .test_video {
+      display: block;
+      // object-position: 0px 0px;
+      width: 100%;
+      /* display: none; */
+    }
+  }
+  .part2{
+    background: url('~assets/images/bgimg/bg_03.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  .part3{
+    background: url('~assets/images/bgimg/bg_02.jpg') repeat;
+  }
+}
+#fp-nav {
+  ul{
+    li{
+      margin: 10px 0;
+      width: 14px;
+      height: 14px;
+      a{
+        transition: all .7s ease;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255, 0.4);
+        position: relative;
+        margin-bottom: 10px; 
+        background-color: none;
+        span{
+          background: #fff;
+          margin: 0;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+        }
+        &:hover{
+        }
+        &.active { 
+          border: 1px solid rgba(255,255,255, 1);
+          span{
+            top: 0;
+            left: 0;
+            transform: translate(0,0);
+            margin: 0;
+            height: 13px;
+            width: 13px;
+          }
+        }
+      }
+      &:hover{
+        a{
+          span{
+            top: 0;
+            left: 0;
+            transform: translate(0,0);
+            margin: 0;
+            height: 12px;
+            width: 13px;
+          }
+          &.active{
+            span{
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
+}
+  // 内陷
+.invaginate{
+  background-color: #232323;
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  box-shadow: inset 0 5px 10px -5px #191919, 0 1px 0 0 #444;
+  -moz-box-shadow: inset 0 5px 10px -5px #191919,0 1px 0 0 #444;
+  -webkit-box-shadow: inset 0 5px 10px -5px #191919, 0 1px 0 0 #444;
+}
+
+// 首页动画
+
+@-moz-keyframes downTuch {
+  0% {bottom: 2vh;opacity: 0.5}
+  50% {bottom: 4vh;opacity: 1}
+  100% {bottom: 2vh;opacity: 0.5}
+}
+@-webkit-keyframes downTuch {
+  0% {bottom: 2vh;opacity: 0.5}
+  50% {bottom: 4vh;opacity: 1}
+  100% {bottom: 2vh;opacity: 0.5}
+}
+@-o-keyframes downTuch {
+  0% {bottom: 2vh;opacity: 0.5}
+  50% {bottom: 4vh;opacity: 1}
+  100% {bottom: 2vh;opacity: 0.5}
+}
+@keyframes downTuch {
+  0% {bottom: 2vh;opacity: 0.5}
+  50% {bottom: 4vh;opacity: 1}
+  100% {bottom: 2vh;opacity: 0.5}
+}
