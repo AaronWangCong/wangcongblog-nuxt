@@ -24,6 +24,7 @@ export default {
   },
   loading: { color: '#fff' },
   css: [
+    'element-ui/lib/theme-chalk/index.css',
     'ant-design-vue/dist/antd.css',
     '~assets/scss/reset.scss',
     '~assets/scss/style.scss'
@@ -31,9 +32,10 @@ export default {
   plugins: [
     { src: "@/plugins/element-ui", ssr: true },
     { src: "@/plugins/antd-ui", ssr: true },
-    { src: "@/plugins/skPlayer", ssr: false },
+    // { src: "@/plugins/skPlayer", ssr: false },
     { src: "@/plugins/fullpage", ssr: false },
-    { src: "@/plugins/baseDomain", ssr: true }
+    { src: "@/plugins/baseDomain", ssr: true },
+    { src: "@/plugins/vue-lazyload", ssr: false }
   ],
   modules: [
   ],

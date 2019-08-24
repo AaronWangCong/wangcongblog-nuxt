@@ -6,7 +6,6 @@
   </div>
 </template>
 <script>
-  import skPlayer from '../components/skPlayer.vue'
   export default {
     name: '',
     components: {

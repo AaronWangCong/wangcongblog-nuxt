@@ -103,3 +103,18 @@ input::-webkit-inner-spin-button {
 input[type="number"]{
   -moz-appearance: textfield;
 }
+
+
+/*
+******ant design 样式重置
+*/
+
+// .ant-modal 
+.ant-modal-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .ant-modal{
+    top: 0;
+  }
+}

@@ -1,7 +1,12 @@
 <template>
   <div class="header-wrap">
     <div class="w">
-      <div class="header-logo"><nuxt-link to="/"><img src="../assets/images/logo.png" alt=""></nuxt-link></div>
+      <div class="header-logo">
+        <nuxt-link to="/">
+          <!-- <img src="../assets/images/logo.png" alt=""> -->
+          <h2 style="width:160px;height:40px;font-size:25px;">LOGO设计中</h2>
+        </nuxt-link>
+      </div>
       <ul class="header-nav">
         <nuxt-link to="/" tag="li"><span>欢迎页</span></nuxt-link>
         <nuxt-link to="/home" tag="li"><span>首页</span></nuxt-link>
@@ -68,7 +73,7 @@
   left: 0;
   background-color: #fff;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  z-index: 1001;
+  z-index: 998;
   .w{
     height: 80px;
     display: flex;
@@ -122,7 +127,7 @@
           background-color: #fff;
           box-shadow: 0 0 30px rgba(0,0,0,0.07);
           top: 100%;
-          z-index: 1002;
+          z-index: 999;
           transition: all 0.5s cubic-bezier(0.77,0,0.175,1);
           opacity: 0;
           transform: translateY(5px);
