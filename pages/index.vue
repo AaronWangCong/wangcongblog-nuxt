@@ -68,9 +68,6 @@
         </div>
       </div>
     </div>
-
-    <!-- 首页通知 -->
-    <NoticeMessige />
   </div>
 </template>
 <script>
@@ -80,13 +77,11 @@
   import banner04 from '../assets/images/banner/banner04.jpg'
   import banner05 from '../assets/images/banner/banner05.jpg'
   import AutoCarousel from '~/components/autoCarousel.vue'
-  import NoticeMessige from '../components/NoticeMessige.vue'
   import { mapState } from 'vuex'
   export default {
     name: '',
     components: {
       'message-carousel': AutoCarousel,
-      NoticeMessige
     },
     props:{
     },

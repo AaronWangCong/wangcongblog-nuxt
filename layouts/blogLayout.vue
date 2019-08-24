@@ -1,5 +1,7 @@
 <template>
   <div class="blogLayout-wrap">
+    <!-- 首页通知 -->
+    <NoticeMessige />
     <Header />
     <div class="content">
       <nuxt />
@@ -10,11 +12,13 @@
 <script>
   import skPlayer from '../components/skPlayer.vue'
   import Header from '../components/header.vue'
+  import NoticeMessige from '../components/NoticeMessige.vue'
   export default {
     name: '',
     components: {
       skPlayer,
-      Header
+      Header,
+      NoticeMessige
     },
     props:{
     },
