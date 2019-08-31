@@ -1,6 +1,10 @@
 import Vue from 'vue'
 // var skPlayer = require('skPlayer');
 export default ({ app, store }) => {
+  if(app.player) {
+    // app.player.destroy();
+    console.log('销毁')
+  }
   app.player = new skPlayer({
     autoplay: true,
     //可选项,自动播放,默认为false,true/false

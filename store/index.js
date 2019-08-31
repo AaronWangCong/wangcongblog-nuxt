@@ -3,9 +3,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 import common from './common'
 
-const store = () => new Vuex.Store({
+export const store = () => ({
   modules: {
-      common
+    common
   }
 })
-export default store;

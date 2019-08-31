@@ -1,23 +1,28 @@
 <template>
   <div class="blogLayout-wrap">
     <!-- 首页通知 -->
-    <NoticeMessige />
     <Header />
     <div class="content">
       <nuxt />
     </div>
+    <Footer />
     <skPlayer />
+
+    <!-- 首页通知 -->
+    <NoticeMessige />
   </div>
 </template>
 <script>
   import skPlayer from '../components/skPlayer.vue'
-  import Header from '../components/header.vue'
+  import Header from '../components/Header.vue'
+  import Footer from '../components/Footer.vue'
   import NoticeMessige from '../components/NoticeMessige.vue'
   export default {
     name: '',
     components: {
       skPlayer,
       Header,
+      Footer,
       NoticeMessige
     },
     props:{
@@ -33,13 +38,6 @@
     },
     mounted() {
       this.changeRem();
-      // 百度自动推送
-      (function(){
-        let bp = document.createElement('script');
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        let s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-      })();
     },
     methods: {
       changeRem() {
@@ -48,7 +46,7 @@
         html.style.fontSize = width / 7.5 + "px";
         //1rem=100;
       }
-    },
+    }
   }
 </script>
 <style lang="scss">

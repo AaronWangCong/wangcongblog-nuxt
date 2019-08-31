@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="video-wrap">
     <video id="test_video" class="test_video" 
       webkit-playsinline playsinline 
       src="http://res.imtt.qq.com/qqbrowser/js/advideo.mp4" 
@@ -16,6 +16,7 @@
     </video>
   </div>
 </template>
+
 <script>
   export default {
     name: '',
@@ -47,4 +48,6 @@
   }
 </script>
 <style lang="scss">
+.video-wrap{
+}
 </style>

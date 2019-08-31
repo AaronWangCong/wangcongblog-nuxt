@@ -2,12 +2,12 @@
 export default {
   mode: 'universal',
   head: {
-    title: 'AWC-创造你就创造了这个世界！',
+    title: 'AWC汪聪-创造你就创造了这个世界！',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'keywords', name: 'keywords', content: 'AWC,AWC汪聪,AWC技术博文,Aaron,AaronWangCong,wangcong,前端汪聪,vue,nuxt,node,ngnix,pm2,服务端渲染' },
-      { hid: 'description', name: 'description', content: 'AWC技术博文是汪聪个人门户网站的一个独立子站，包括html、CSS、vue、nuxt、javascript、小程序、pm2等技术知识，致力于开源一份简洁标准的前端技术博文网站。' }
+      { hid: 'keywords', name: 'keywords', content: 'AWC汪聪,AWC技术博文,Aaron,AaronWangCong,wangcong,前端汪聪,vue,nuxt,node,ngnix,pm2,服务端渲染' },
+      { hid: 'description', name: 'description', content: 'AWC汪聪是汪聪个人门户网站的主站，包括html、CSS、vue、nuxt、javascript、小程序、pm2等技术知识，致力于打造一份符合自己编码风格的独立站点。' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.jpg' },
@@ -33,11 +33,15 @@ export default {
     { src: "@/plugins/element-ui", ssr: true },
     { src: "@/plugins/antd-ui", ssr: true },
     // { src: "@/plugins/skPlayer", ssr: false },
+    { src: "@/plugins/baidutuisong", ssr: false },
     { src: "@/plugins/fullpage", ssr: false },
     { src: "@/plugins/baseDomain", ssr: true },
     { src: "@/plugins/vue-lazyload", ssr: false }
   ],
   modules: [
+  ],
+  proxy: [
+    ['/api', { target: 'http://127.0.0.1:8080/' }]
   ],
   build: {
     extractCSS: { allChunks: true },

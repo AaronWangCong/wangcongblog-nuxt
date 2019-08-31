@@ -1,5 +1,5 @@
 <template>
-  <div class="header-wrap">
+  <div class="header-wrap" :class="headerHide ? 'hide' : ''">
     <div class="w">
       <div class="header-logo">
         <nuxt-link to="/">
@@ -53,6 +53,7 @@
     layout:'',
     data() {
       return {
+        headerHide: false
       }
     },
     computed: {
@@ -60,8 +61,32 @@
     created() {
     },
     mounted() {
+      document.addEventListener('DOMMouseScroll', this.scrollFunc, false);
+      window.onmousewheel = document.onmousewheel = this.scrollFunc;
     },
     methods: {
+      scrollFunc (e) {
+        e = e || window.event;  
+        if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件               
+          if (e.wheelDelta > 0) { //当滑轮向上滚动时  
+            // console.log("滑轮向上滚动");
+            this.headerHide = false
+          }  
+          if (e.wheelDelta < 0) { //当滑轮向下滚动时  
+            // console.log("滑轮向下滚动");
+            this.headerHide = true
+          }
+        } else if (e.detail) {  //Firefox滑轮事件  
+          if (e.detail> 0) { //当滑轮向上滚动时  
+            // console.log("滑轮向上滚动");
+            this.headerHide = false
+          }
+          if (e.detail< 0) { //当滑轮向下滚动时  
+            // console.log("滑轮向下滚动");
+            this.headerHide = true
+          }
+        }
+      }
     },
   }
 </script>
@@ -74,6 +99,8 @@
   background-color: #fff;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   z-index: 998;
+  backface-visibility: hidden;
+  transition: background-color 0.5s cubic-bezier(0.77,0,0.175,1),box-shadow 0.5s cubic-bezier(0.77,0,0.175,1),transform 0.6s cubic-bezier(0.77,0,0.175,1),-webkit-transform 0.6s cubic-bezier(0.77,0,0.175,1);
   .w{
     height: 80px;
     display: flex;
@@ -193,6 +220,11 @@
         -webkit-animation: bgcolorRandom 3s infinite linear;
       }
     }
+  }
+  &.hide{
+    box-shadow: none;
+    -webkit-transform: translateY(-80px);
+    transform: translateY(-80px);
   }
 
   @media screen and (max-width: 750px) {

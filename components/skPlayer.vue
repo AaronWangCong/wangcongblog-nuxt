@@ -10,7 +10,7 @@
 <script>
   // import player from '../plugins/skPlayer.js'
   export default {
-    name: '',
+    name: 'skPlayer',
     components: {
     },
     props:{
@@ -18,7 +18,8 @@
     layout:'',
     data() {
       return {
-        iscloseSkPlayer: false
+        iscloseSkPlayer: false,
+        player: {}
       }
     },
     computed: {
@@ -28,7 +29,7 @@
       }
     },
     mounted() {
-      var player = new skPlayer({
+      this.player = new skPlayer({
         autoplay: true,
         //可选项,自动播放,默认为false,true/false
         listshow: true,
@@ -46,7 +47,7 @@
             //登录网易云网页版,在网页地址中拿到
             // ... playlist?id=317921676
         }
-      });
+      })
       window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
       let that = this
       setTimeout(()=>{
@@ -115,6 +116,9 @@
         renderFrame();
       }
     },
+    destroyed() {
+      this.player.destroy();
+    }
   }
 </script>
 <style lang="scss">

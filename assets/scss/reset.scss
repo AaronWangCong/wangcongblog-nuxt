@@ -95,6 +95,23 @@ p{
   color:    #999;
 }
 
+::-webkit-scrollbar-track-piece { //滚动条凹槽的颜色，还可以设置边框属性
+  background-color:#fff;
+}
+::-webkit-scrollbar {//滚动条的宽度
+  width:7px;
+  height:7px;
+}
+::-webkit-scrollbar-thumb {//滚动条的设置
+  background-color:rgb(182, 190, 199);
+  background-clip:padding-box;
+  min-height:28px;
+  border-radius: 15px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color:#bbb;
+}
+
 /*------------------------修改type=number的样式------------------------------------------------*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

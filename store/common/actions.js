@@ -1,8 +1,9 @@
-// import { shopCart } from "../../lib/api";
-
-export default{
-  // async shopCartA({ commit, state}) {
-  //   let res = await shopCart();
-  //   commit('shopCartM',res);
-  // }
-};
+import { getIndexBg } from '../../lib/api'
+export default {
+  async getIndexBgA ({state, commit, dispatch}, params) {
+    let res = await getIndexBg();
+    if (res) {
+      commit('getIndexBg', res)
+    }
+  }
+}
