@@ -1,6 +1,6 @@
 <template>
   <div class="index-wrap">
-    <nuxt-link to="/home" class="homeBtn">网站建设中,点击进入主站</nuxt-link>
+    <nuxt-link to="/home" class="homeBtn">网站建设中,点击此处进入主站</nuxt-link>
     <iframe id="bg-iframe" src="./index_bg.html" class="iframeParent" frameborder="0" width="100%" height="100%"></iframe>
     <!-- 首页通知 -->
     <!-- <NoticeMessige /> -->
