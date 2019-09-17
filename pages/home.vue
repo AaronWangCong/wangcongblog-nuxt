@@ -103,6 +103,7 @@
         </div>
       </div>
     </div>
+    <Button action = '{ "type":"adButton","name":"广告位点击" }'>广告位图片</Button>
   </div>
 </template>
 <script>
@@ -172,7 +173,6 @@
         this.bannerInfo.push(this.bannerInfo[0])
         this.bannerInfo.unshift(this.bannerInfo[this.bannerInfo.length-2])
         this.setWidthBanner()
-        // window.addEventListener('resize', this.setWidthBanner())
         this.initAnimate();
       }
     },
@@ -185,17 +185,17 @@
           let index = this.slideIndex + 1;
           if(index >= this.bannerInfo.length -2) {
             index = 0;
-            // this.animate = false;
+            this.animate = false;
           }
           this.handleSlide(index);
         };
         this.timer = null;
         this.timer = setInterval(interval,3000);
         document.querySelector('.carousel').onmouseover  = ()=>{
-          clearInterval(timer);
+          clearInterval(this.timer);
         };
         document.querySelector('.carousel').onmouseout  = ()=>{
-          timer = setInterval(interval,3000);
+          this.timer = setInterval(interval,3000);
         };
       },
       handleSlide(index){
@@ -223,7 +223,6 @@
       }
     },
     destroyed() {
-      // window.removeEventListener('resize', this.setWidthBanner())
       clearInterval(this.timer)
     }
   }

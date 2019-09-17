@@ -10,7 +10,7 @@ export default {
       { hid: 'description', name: 'description', content: 'AWC汪聪是汪聪个人门户网站的主站，包括html、CSS、vue、nuxt、javascript、小程序、pm2等技术知识，致力于打造一份符合自己编码风格的独立站点。' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.jpg' },
+      { rel: 'icon', type: 'image/x-icon', href: '/icon05.png' },
       { rel: 'stylesheet', type: 'text/css', href: 'http://at.alicdn.com/t/font_956898_dmazn3p75bp.css' },
     ],
     script: [
@@ -36,7 +36,8 @@ export default {
     { src: "@/plugins/baidutuisong", ssr: false },
     { src: "@/plugins/fullpage", ssr: false },
     { src: "@/plugins/baseDomain", ssr: true },
-    { src: "@/plugins/vue-lazyload", ssr: false }
+    { src: "@/plugins/vue-lazyload", ssr: false },
+    // { src: "@/plugins/monitors-js", ssr: false }
   ],
   modules: [
   ],

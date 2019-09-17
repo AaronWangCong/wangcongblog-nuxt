@@ -3,12 +3,11 @@
     <div class="w">
       <div class="header-logo">
         <nuxt-link to="/">
-          <!-- <img src="../assets/images/logo.png" alt=""> -->
-          <h2 style="width:160px;height:40px;font-size:25px;">LOGO设计中</h2>
+          <img src="../assets/images/logo05.png" alt="">
         </nuxt-link>
       </div>
       <ul class="header-nav">
-        <nuxt-link to="/" tag="li"><span>欢迎页</span></nuxt-link>
+        <nuxt-link to="/" tag="li"><span>引导页</span></nuxt-link>
         <nuxt-link to="/home" tag="li"><span>首页</span></nuxt-link>
         <li><span><a href="http://doc.wangcong.wang/" target="_blank">技术分享</a></span></li>
         <nuxt-link to="/blog" tag="li">
@@ -23,9 +22,9 @@
         <nuxt-link to="/blog" tag="li">
           <span>友情链接</span> <i class="iconfont icon-xiabiao"></i>
           <ul class="nav-child">
-            <nuxt-link to="/blog" tag="li">我不是汪聪呀</nuxt-link>
-            <nuxt-link to="/blog" tag="li">我就是汪聪</nuxt-link>
-            <nuxt-link to="/blog" tag="li">我才是汪聪啊</nuxt-link>
+            <nuxt-link to="/blog" tag="li"><span>我不是汪聪呀</span></nuxt-link>
+            <nuxt-link to="/blog" tag="li"><span>我就是汪聪</span></nuxt-link>
+            <nuxt-link to="/blog" tag="li"><span>我才是汪聪啊</span></nuxt-link>
           </ul>
         </nuxt-link>
         <nuxt-link to="/blog" tag="li">
@@ -111,7 +110,7 @@
       position: relative;
       img{
         width: 160px;
-        height: 40px;
+        // height: 76px;
       }
       &::after{
         content: '';
@@ -120,7 +119,7 @@
         background-color: #dedede;
         position: absolute;
         right: -40px;
-        top: 0px;
+        top: 6px;
       }
     }
     .header-nav{

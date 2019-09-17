@@ -1,9 +1,11 @@
 import actions from './actions.js';
 import mutations from './mutations.js';
 
-const state = {
-  isShowImg: false,
-  indexBg: ''
+const state = () => {
+  return {
+    isShowImg: false,
+    indexBg: ''
+  }
 }
 
 export default {

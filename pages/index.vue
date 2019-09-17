@@ -1,6 +1,9 @@
 <template>
   <div class="index-wrap">
-    <nuxt-link to="/home" class="homeBtn">网站建设中,进入主站</nuxt-link>
+    <div class="index-wrap-content">
+      <nuxt-link to="/home" class="homeBtn">网站建设中,进入主站</nuxt-link>
+      <video width="665" height="376" poster="https://i1.hdslb.com/bfs/archive/ee1a6db6ad1465ae3e338dd913b2ebe2fa2eb78b.jpg" src="/video/index01.mp4" preload="auto" autoplay="" controls="" class="embed-responsive-item bilibili"></video>
+    </div>
     <iframe id="bg-iframe" src="./index_bg.html" class="iframeParent" frameborder="0" width="100%" height="100%"></iframe>
     <!-- 首页通知 -->
     <!-- <NoticeMessige /> -->
@@ -8,6 +11,7 @@
 </template>
 <script>
   import NoticeMessige from '../components/NoticeMessige.vue'
+  // import video from '../components/video.vue'
   import { mapState, mapActions } from 'vuex'
   export default {
     name: '',
@@ -51,17 +55,26 @@
     border: 0;
     overflow: hidden;
   }
-  .homeBtn{
+  .index-wrap-content{
     position: fixed;
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-    top: 40%;
+    align-items: center;
     left: 50%;
-    transform: translateX(-50%);
-    z-index: 1001;
-    &:hover{
-      color: rgb(24, 118, 226);
+    top: 50%;
+    transform: translate(-50%, -60%);
+    display: flex;
+    z-index: 99999;
+    padding: 20px;
+    .homeBtn{
+      width: 400px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      &:hover{
+        color: rgb(24, 118, 226);
+      }
+    }
+    .bilibili{
+      box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.7);
     }
   }
 }
