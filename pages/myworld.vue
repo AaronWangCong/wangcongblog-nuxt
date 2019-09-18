@@ -1,7 +1,7 @@
 <template>
   <div class="myworld-wrap">
     myworld
-    <indexVideo />
+    <iframe src="https://v.qq.com/iframe/player.html?vid=i0314gnvro5" allowfullscreen="" frameborder="0" class="video"></iframe>
   </div>
 </template>
 <script>
