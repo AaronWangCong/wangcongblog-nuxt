@@ -1,12 +1,15 @@
 <template>
   <div class="myworld-wrap">
     myworld
+    <indexVideo />
   </div>
 </template>
 <script>
+  import indexVideo from '../components/video.vue'
   export default {
     name: '',
     components: {
+      indexVideo
     },
     props:{
     },

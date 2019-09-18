@@ -9,7 +9,7 @@
     <skPlayer />
 
     <!-- 首页通知 -->
-    <!-- <NoticeMessige /> -->
+    <NoticeMessige />
   </div>
 </template>
 <script>
