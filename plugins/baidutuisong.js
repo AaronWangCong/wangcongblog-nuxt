@@ -9,4 +9,9 @@ export default () => {
   }
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(bp, s);
+
+  var s2 = document.getElementsByTagName("script")[1];
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4669ca31a1d80c8746d9397110bbd0db";
+  s2.parentNode.insertBefore(hm, s2);
 }

@@ -226,33 +226,33 @@
     transform: translateY(-80px);
   }
 
-  @media screen and (max-width: 750px) {
-    box-shadow: 0 0.02rem 0.12rem 0 rgba(0, 0, 0, 0.1);
-    .w{
-      height: 1rem;
-      padding: 0 0.4rem;
-      .header-logo{
-        width: 1.6rem;
-        img{
-          width: 2rem;
-          height: 0.5rem;
-        }
-        &::after{
-          width: 0.01rem;
-          height: 0.4rem;
-          right: -0.4rem;
-        }
-      }
-      .header-nav{
-        display: none;
-      }
-      .haeder-login{
-        width: 2rem;
-        span{
-          font-size: 0.16rem;
-        }
-      }
-    }
-  }
+  // @media screen and (max-width: 750px) {
+  //   box-shadow: 0 0.02rem 0.12rem 0 rgba(0, 0, 0, 0.1);
+  //   .w{
+  //     height: 1rem;
+  //     padding: 0 0.4rem;
+  //     .header-logo{
+  //       width: 1.6rem;
+  //       img{
+  //         width: 2rem;
+  //         height: 0.5rem;
+  //       }
+  //       &::after{
+  //         width: 0.01rem;
+  //         height: 0.4rem;
+  //         right: -0.4rem;
+  //       }
+  //     }
+  //     .header-nav{
+  //       display: none;
+  //     }
+  //     .haeder-login{
+  //       width: 2rem;
+  //       span{
+  //         font-size: 0.16rem;
+  //       }
+  //     }
+  //   }
+  // }
 }
 </style>

@@ -7,7 +7,7 @@
       autoplay="autoplay" loop="loop"
       muted="muted"
       preload="auto"
-      style="object-fit:fill"
+      style="object-fit:fill;width:960px;"
       poster="https://i1.hdslb.com/bfs/archive/ee1a6db6ad1465ae3e338dd913b2ebe2fa2eb78b.jpg"
       x5-video-player-type="h5"
       x5-video-player-fullscreen="true"
@@ -50,8 +50,7 @@
         test_video.style.width = window.innerWidth/2 + "px";
         test_video.style.height = window.innerHeight/2 + "px";
         if(window.innerWidth <= 750) {
-          test_video.style.width = window.innerWidth-20 + "px";
-          test_video.style.height = window.innerHeight/2-20 + "px";
+          test_video.style.width = document.innerWidth-20 + "px";
         }
       }
     },

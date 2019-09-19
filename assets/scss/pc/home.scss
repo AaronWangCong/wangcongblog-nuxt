@@ -156,14 +156,14 @@
         }
       }
     }
-    @media screen and (max-width: 750px) {
-      .pc-carousel{
-        display: none;
-      }
-      .m-carousel{
-        display: block;
-      }
-    }
+    // @media screen and (max-width: 750px) {
+    //   .pc-carousel{
+    //     display: none;
+    //   }
+    //   .m-carousel{
+    //     display: block;
+    //   }
+    // }
   }
   .home-wrap-slogan{
     width: 100%;
@@ -250,20 +250,20 @@
               background: rgba(0, 0, 0, 0.6);
             }
           }
-          @media screen and (max-width:1100px){
-            width: 30%;
-          }
-          @media screen and (max-width:660px){
-            width: 48%;
-            .card-item-text{
-              h2{
-                font-size: 16px;
-              }
-              span{
-                font-size: 12px;
-              }
-            }
-          }
+          // @media screen and (max-width:1100px){
+          //   width: 30%;
+          // }
+          // @media screen and (max-width:660px){
+          //   width: 48%;
+          //   .card-item-text{
+          //     h2{
+          //       font-size: 16px;
+          //     }
+          //     span{
+          //       font-size: 12px;
+          //     }
+          //   }
+          // }
         }
         .card-item1{
           background: url('~assets/images/card1.png') no-repeat;
@@ -420,18 +420,18 @@
               }
             }
           }
-          @media screen and (max-width: 992px) {
-            flex: 0 0 33.33333%;
-            max-width: 33.33333%;
-          }
-          @media screen and (max-width: 750px) {
-            flex: 0 0 50%;
-            max-width: 50%;
-          }
-          @media screen and (max-width: 450px) {
-            flex: 0 0 100%;
-            max-width: 100%;
-          }
+          // @media screen and (max-width: 992px) {
+          //   flex: 0 0 33.33333%;
+          //   max-width: 33.33333%;
+          // }
+          // @media screen and (max-width: 750px) {
+          //   flex: 0 0 50%;
+          //   max-width: 50%;
+          // }
+          // @media screen and (max-width: 450px) {
+          //   flex: 0 0 100%;
+          //   max-width: 100%;
+          // }
         }
       }
     }

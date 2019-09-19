@@ -1,9 +1,8 @@
 <template>
   <div class="index-wrap">
-    <div class="index-wrap-content">
+    <div class="index-wrap-content w">
       <indexVideo class="bilibili" />
       <nuxt-link to="/home" class="homeBtn">网站建设中,进入主站</nuxt-link>
-      <!-- <video width="665" height="376" poster="https://i1.hdslb.com/bfs/archive/ee1a6db6ad1465ae3e338dd913b2ebe2fa2eb78b.jpg" src="/video/index01.mp4" preload="auto" autoplay="" controls="" class="embed-responsive-item bilibili"></video> -->
     </div>
     <iframe id="bg-iframe" src="./index_bg.html" class="iframeParent" frameborder="0" width="100%" height="100%"></iframe>
     <!-- 首页通知 -->
