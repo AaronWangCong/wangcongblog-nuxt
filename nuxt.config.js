@@ -40,9 +40,11 @@ export default {
     // { src: "@/plugins/monitors-js", ssr: false }
   ],
   modules: [
+    '@nuxtjs/proxy'
   ],
   proxy: [
-    ['/api', { target: 'http://127.0.0.1:8080/' }]
+    // ['/api', { target: 'http://127.0.0.1:8080/' }],
+    ['/json', { target: 'https://api.baidu.com/'}]
   ],
   build: {
     extractCSS: { allChunks: true },

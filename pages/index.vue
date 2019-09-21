@@ -32,12 +32,13 @@
       })
     },
     created() {
+      this.getBaiDuTongJiA()
     },
     mounted() {
       this.getIndexBgA()
     },
     methods: {
-      ...mapActions('common', ['getIndexBgA'])
+      ...mapActions('common', ['getIndexBgA', 'getBaiDuTongJiA'])
     },
   }
 </script>
@@ -63,6 +64,7 @@
     top: 50%;
     transform: translate(-50%, -60%);
     display: flex;
+    flex-direction: column;
     z-index: 99999;
     padding: 20px;
     .homeBtn{
@@ -71,6 +73,8 @@
       font-size: 20px;
       font-weight: bold;
       text-align: center;
+      display: inline-block;
+      margin-top: 40px;
       &:hover{
         color: rgb(24, 118, 226);
       }
