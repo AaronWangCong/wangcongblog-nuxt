@@ -16,12 +16,113 @@ body, html {
   background-color: #F5F5F5;
 }
 
+// 路由页面过渡动画
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+
 .lazyloaded {
   opacity: 1;
   transition: opacity 1s cubic-bezier(0.77,0,0.175,1);
 }
 .boxShow {
   box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1);
+}
+
+/*************快速样式*************/
+.f12 {
+  font-size: 12px;
+}
+.f14 {
+  font-size: 14px;
+}
+.f16 {
+  font-size: 16px;
+}
+.f18 {
+  font-size: 18px;
+}
+.f20 {
+  font-size: 20px;
+}
+.f34{
+  font-size: 34px;
+}
+
+.red {
+  color: #ea0627;
+}
+.gray {
+  color: #999;
+}
+.green {
+  color: rgb(64, 190, 14);
+}
+.blue {
+  color: #0f7ce2;
+}
+.yellow {
+  color: #f1b81c;
+}
+
+.p10 {
+  padding: 10px;
+}
+
+.m0{
+  margin: 0;
+}
+.ml15 {
+  margin-left: 15px;
+}
+.ml50 {
+  margin-left: 50px;
+}
+
+.mr5{
+  margin-right: 5px;
+}
+
+.lineheight34{
+  line-height: 34px;
+}
+
+.flex-btw{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-ed{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex-str{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-cet{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.w100{
+  width: 100px;
+}
+.width300{
+  width: 300px;
+}
+
+.text-cap{
+  text-transform : capitalize;
+}
+.text-low{
+  text-transform : lowercase;
 }
 
 @keyframes colorRandom {

@@ -1,20 +1,20 @@
 <template>
   <div class="home-wrap">
     <!-- <no-ssr> -->
-      <full-page ref="fullpage" :options="options" id="fullpage">
-        <div class="section part1">
-          <span class="toBottom"><i class="iconfont icon-xiangxiajixu"></i></span>
-        </div>
-        <div class="section part2">
-          
-          <span class="toBottom"><i class="iconfont icon-xiangxiajixu"></i></span>
-        </div>
-        <div class="section part3">
-          <span class="toBottom"><i class="iconfont icon-xiangxiajixu"></i></span>
-        </div>
-        <div class="section part4">
-        </div>
-      </full-page>
+    <full-page id="fullpage" ref="fullpage" :options="options">
+      <div class="section part1">
+        <span class="toBottom"><i class="iconfont icon-xiangxiajixu"></i></span>
+      </div>
+      <div class="section part2">
+        
+        <span class="toBottom"><i class="iconfont icon-xiangxiajixu"></i></span>
+      </div>
+      <div class="section part3">
+        <span class="toBottom"><i class="iconfont icon-xiangxiajixu"></i></span>
+      </div>
+      <div class="section part4">
+      </div>
+    </full-page>
     <!-- </no-ssr> -->
   </div>
 </template>
@@ -52,12 +52,12 @@
       },
       afterLoad(origin, destination, direction) {
         let anchor = destination.anchor
-        switch(anchor) {
+        // switch(anchor) {
           // case 'part1': console.log(anchor);this.resetAnimate();break;
           // case 'part2': this.resetAnimate();this.isShowPart1 = true;break;
           // case 'part3': this.resetAnimate();this.isShowPart2 = true;break;
           // case 'part4': this.resetAnimate();this.isShowPart3 = true;break;
-        }
+        // }
       }
     },
   }

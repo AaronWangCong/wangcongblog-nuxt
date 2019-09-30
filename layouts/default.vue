@@ -25,14 +25,14 @@
     created() {
     },
     mounted() {
-      this.changeRem();
+      this.changeRem()
     },
     methods: {
       changeRem() {
-        var html = document.documentElement;
-        var width = html.getBoundingClientRect().width;
-        html.style.fontSize = width / 7.5 + "px";
-        //1rem=100;
+        var html = document.documentElement
+        var width = html.getBoundingClientRect().width
+        html.style.fontSize = width / 7.5 + "px"
+        //1rem=100
       }
     }
   }

@@ -135,3 +135,360 @@ input[type="number"]{
     top: 0;
   }
 }
+
+/*************重置elementui button样式*************/
+.el-button{
+  border-radius: 4px;
+  padding: 9px 10px;
+  // <el-button type="danger">危险按钮</el-button>
+  // <el-button type="danger" plain>危险按钮</el-button>
+  text-transform : capitalize;
+  &.el-button--danger{
+    color: #fff;
+    background-color: #ea0627;
+    border-color: #ea0627;
+    i{
+      margin-right: 5px;
+    }
+    &:hover{
+      opacity: 0.7;
+    }
+    &.is-plain{
+      background: #fff;
+      border-color: #ea0627;
+      color: #ea0627;
+      &:hover{
+        background: #ea0627;
+        border-color: #ea0627;
+        color: #fff;
+        opacity: 1;
+      }
+    }
+  }
+  // <el-button type="text" class="danger">文字按钮</el-button>
+  &.el-button--text{
+    margin-left: 0;
+    color: #ea0627;
+    text-decoration: underline;
+    i{
+      margin-right: 5px;
+    }
+    &:hover{
+      text-decoration: underline;
+    }
+    &.danger:hover{
+      opacity: 0.8;
+    }
+  }
+}
+
+.el-breadcrumb{
+  margin: 20px 0;
+}
+
+
+// 代码高亮重置
+.article-content-text{
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #2c3e50;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  color: #2c3e50;
+  min-height: 500px;
+  p{
+    text-indent: 40px;
+    font-size: 16px;
+    color: #666;
+    line-height: 25px;
+  }
+  img{
+    max-width: 100%;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 2px 25px 0 rgba(0,0,0,.7);
+  }
+  h1,h2,h3,h4,h5,h6{
+    font-weight: bold;
+  }
+  ul {
+    margin: 16px 0;
+    padding-left: 1.2em;
+    li {
+      list-style: disc;
+      line-height: 1.7;
+      ul li {
+        list-style: circle;
+      }
+    }
+  }
+  code {
+    color: #ff502c;
+    background-color: #fff5f5;
+    padding: .25rem .5rem;
+    margin: 0;
+    font-size: .85em;
+    border-radius: 3px;
+  }
+  pre{
+    position: relative;
+    z-index: 1;
+    line-height: 1.4;
+    padding: 1.25rem 1.5rem;
+    margin: .85rem 0;
+    background-color: #282c34;
+    border-radius: 6px;
+    font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+    font-size: 1em;
+    .hljs{
+      background-color: #282c34;
+      color: #ccc;
+      font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+      font-size: 1em;
+    }
+    &[class*=language-] code,
+    & code {
+      color: #fff;
+      padding: 0;
+      background-color: transparent;
+      border-radius: 0;
+      font-size: .85em;
+      font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+      .hljs-string{ 
+        color: #7ec699;
+      }
+      .hljs-keyword {
+        color: #cc99cd;
+      }
+      .hljs-property,
+      .hljs-constant,
+      .hljs-class-name{
+        color: #f8c555;
+      }
+      .hljs-number,
+      .hljs-function{
+        color: #f08d49;
+      }
+      .hljs-tag{
+        color: #e2777a;
+      }
+    }
+  }
+}
+
+/*************重置重置elementui el-from样式*************/
+.el-form {
+  .el-form-item{
+    margin-bottom: 14px;
+    .el-form-item__error{
+      padding-top: 0;
+    }
+  }
+}
+.searchForm{
+  padding-top: 15px;
+  .el-form-item{
+    margin-bottom: 10px;
+    .el-form-item__content{
+      line-height: 34px;
+    }
+    .el-form-item__label{
+      line-height: 34px;
+      text-transform : capitalize;
+    }
+    .el-input{
+      width: 180px;
+    }
+    .el-date-editor{
+      width: 240px !important;
+      .el-range-input{
+        font-size: 14px;
+        &::-webkit-input-placeholder{
+          font-size: 14px;
+        }
+        &::-moz-placeholder{
+          font-size: 14px;
+        }
+        &:-ms-input-placeholder{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+/*************重置重置elementui table样式*************/
+.el-table__fixed-left,
+.el-table__fixed-right,
+.el-table{
+  .el-table__fixed-header-wrapper,
+  .el-table__header-wrapper{
+    thead{
+      tr{
+        th{
+          color: #333;
+          font-weight: bold;
+          background: #f4f4f4;
+          padding: 9px 0;
+          text-transform : capitalize;
+        }
+      }
+    }
+  }
+  tbody{
+    tr td{
+      .cell{
+        .el-button.el-button--text{
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+/*************重置重置elementui 分页*************/
+.el-pagination{
+  .el-pager{
+    li{
+      border: solid 1px #cccccc;
+      border-radius: 2px;
+      margin: 0 5px;
+      &.active{
+        color: #ea0627;
+      }
+      &:hover{
+        color: #ea0627;
+      }
+      &.active+li{
+        border-left: 1px solid #ccc;
+      }
+    }
+  }
+}
+
+/*************重置重置elementui el-dialog样式*************/
+.v-modal{
+  opacity: 0.3;
+}
+.el-message-box__wrapper,
+.el-dialog__wrapper{
+  .el-message-box,
+  .el-dialog{
+    box-shadow: 0px 2px 5px 0px 
+		rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    .el-message-box__header,
+    .el-dialog__header{
+      padding: 10px 20px;
+      border-bottom: 1px solid #e8e8e8;
+      .el-message-box__title,
+      .el-dialog__title{
+        font-size: 16px;
+        font-weight: bold;
+        text-transform : capitalize;
+      }
+      .el-message-box__headerbtn,
+      .el-dialog__headerbtn{
+        top: 10px;
+        i{
+          color: #ea0627;
+        }
+      }
+    }
+    .el-message-box__btns,
+    .el-dialog__footer{
+      padding: 10px 20px;
+      border-top: 1px solid #e8e8e8;
+      .el-button{
+        min-width: 80px;
+        padding: 0 10px;
+        line-height: 30px;
+        text-align: center;
+        text-transform : capitalize;
+        &.el-button--default{
+          border: 1px solid #999;
+          background-color: #fff;
+          color: #333;
+          &:hover{
+            background-color: #999;
+            color: #fff;
+          }
+        }
+        &.el-button--primary{
+          border: 1px solid #ea0627;
+          background-color: #ea0627;
+          color: #fff;
+          &:hover{
+            opacity: 0.7;
+            border: 1px solid #ea0627;
+            background-color: #ea0627;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*************重置elementui 输入框*************/
+.el-input{
+  .el-input__inner{
+    border-radius: 4px;
+    border: solid 1px #dedede;
+    line-height: 32px;
+    height: 34px;
+  }
+}
+.el-date-editor{
+  height: 34px;
+  padding: 0px 5px !important;
+  width: 300px !important;
+  .el-range-input{
+    line-height: 34px;
+    height: 32px;
+    font-size: 12px;
+    &::-webkit-input-placeholder{
+      font-size: 14px;
+    }
+    &::-moz-placeholder{
+      font-size: 14px;
+    }
+    &:-ms-input-placeholder{
+      font-size: 14px;
+    }
+  }
+}
+.el-input__suffix{
+  .el-input__icon{
+    line-height: 34px;
+  }
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    #999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    #999;
+}
+
+.el-badge__content{
+  border: 0;
+}
+
+/*------------------------修改type=number的样式------------------------------------------------*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"]{
+  -moz-appearance: textfield;
+}

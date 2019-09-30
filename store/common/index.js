@@ -1,5 +1,5 @@
-import actions from './actions.js';
-import mutations from './mutations.js';
+import actions from './actions.js'
+import mutations from './mutations.js'
 
 const state = () => {
   return {
@@ -21,7 +21,16 @@ const state = () => {
         "gran": "day",
         "max_results": "0"
       }
-    }
+    },
+    editCategoryForm: {
+      category_name: '',
+      category_id: ''
+    },
+    reseteditCategoryForm: {
+      category_name: '',
+      category_id: ''
+    },
+    categoryList: []
   }
 }
 

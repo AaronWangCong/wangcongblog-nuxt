@@ -1,15 +1,12 @@
 <template>
-  <div class="myworld-wrap">
-    myworld
-    <iframe src="https://v.qq.com/iframe/player.html?vid=i0314gnvro5" allowfullscreen="" frameborder="0" class="video"></iframe>
+  <div class="categoryEdit">
+    1111
   </div>
 </template>
 <script>
-  import indexVideo from '../components/video.vue'
   export default {
     name: '',
     components: {
-      indexVideo
     },
     props:{
     },
@@ -23,13 +20,13 @@
     created() {
     },
     mounted() {
-      
     },
     methods: {
     },
   }
 </script>
 <style lang="scss">
-.myworld-wrap{
+.categoryEdit{
+
 }
 </style>

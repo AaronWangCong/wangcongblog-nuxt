@@ -1,6 +1,5 @@
 <template>
   <div class="blogLayout-wrap">
-    <!-- 首页通知 -->
     <Header />
     <div class="content">
       <nuxt />
@@ -37,14 +36,14 @@
     created() {
     },
     mounted() {
-      this.changeRem();
+      this.changeRem()
     },
     methods: {
       changeRem() {
-        var html = document.documentElement;
-        var width = html.getBoundingClientRect().width;
-        html.style.fontSize = width / 7.5 + "px";
-        //1rem=100;
+        var html = document.documentElement
+        var width = html.getBoundingClientRect().width
+        html.style.fontSize = width / 7.5 + "px"
+        //1rem=100
       }
     }
   }

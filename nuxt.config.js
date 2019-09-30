@@ -30,8 +30,8 @@ export default {
     '~assets/scss/style.scss'
   ],
   plugins: [
-    { src: "@/plugins/element-ui", ssr: true },
     { src: "@/plugins/antd-ui", ssr: true },
+    { src: "@/plugins/element-ui", ssr: true },
     // { src: "@/plugins/skPlayer", ssr: false },
     { src: "@/plugins/baidutuisong", ssr: false },
     { src: "@/plugins/fullpage", ssr: false },
@@ -43,12 +43,22 @@ export default {
     '@nuxtjs/proxy'
   ],
   proxy: [
-    // ['/api', { target: 'http://127.0.0.1:8080/' }],
+    ['/oa', { target: 'http://127.0.0.1:8081/' }],
+    // ['/oa', { target: 'http://api.wangcong.wang' }],
     ['/json', { target: 'https://api.baidu.com/'}]
   ],
   build: {
     extractCSS: { allChunks: true },
     extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/
+        })
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="header-wrap" :class="headerHide ? 'hide' : ''">
+  <div :class="headerHide ? 'hide' : ''" class="header-wrap">
     <div class="w">
       <div class="header-logo">
         <nuxt-link to="/">
@@ -27,22 +27,25 @@
             <nuxt-link to="/blog" tag="li"><span>我才是汪聪啊</span></nuxt-link>
           </ul>
         </nuxt-link>
-        <nuxt-link to="/blog" tag="li">
-          <span>造梦者</span> <i class="iconfont icon-xiabiao"></i>
-          <ul class="nav-child">
-            <nuxt-link to="/blog" tag="li">造梦师</nuxt-link>
-          </ul>
-        </nuxt-link>
       </ul>
       <div class="haeder-login">
-        <span class="login-btn"><i class="iconfont icon-yinzhang"></i> 登录</span>
+        <span v-if="auth">欢迎您， <span class="blue">{{ userInfo.nick_name }}</span> !</span>
+        <nuxt-link v-else to="/login"><span class="login-btn"><i class="iconfont icon-yinzhang"></i> 登录</span></nuxt-link>
         <span class="login-weixin"><i class="iconfont icon-weixin"></i></span>
-        <span class="login-weixin"><i class="iconfont icon-tuite"></i></span>
+        <div v-if="auth" class="login-box">
+          <img src="../assets/images/photo.jpg" alt=""> 
+          <i class="iconfont icon-xiabiao"></i>
+          <ul>
+            <li><nuxt-link to="/editDoc" target="_blank"><i class="el-icon-position"></i> 写文章</nuxt-link></li>
+            <li @click="logout()"><i class="el-icon-position"></i> 退出</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+  import { mapState, mapActions } from 'vuex'
   export default {
     name: '',
     components: {
@@ -56,16 +59,22 @@
       }
     },
     computed: {
+      ...mapState({
+        userInfo: state => state.login.userInfo,
+        auth: state => state.login.auth
+      })
     },
     created() {
+      this.getUserInfo()
     },
     mounted() {
-      document.addEventListener('DOMMouseScroll', this.scrollFunc, false);
-      window.onmousewheel = document.onmousewheel = this.scrollFunc;
+      document.addEventListener('DOMMouseScroll', this.scrollFunc, false)
+      window.onmousewheel = document.onmousewheel = this.scrollFunc
     },
     methods: {
+      ...mapActions('login', ['getUserInfo', 'logout']),
       scrollFunc (e) {
-        e = e || window.event;  
+        e = e || window.event
         if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件               
           if (e.wheelDelta > 0) { //当滑轮向上滚动时  
             // console.log("滑轮向上滚动");
@@ -182,7 +191,7 @@
       }
     }
     .haeder-login{
-      width: 200px;
+      // width: 200px;
       height: 100%;
       display: flex;
       align-items: center;
@@ -218,6 +227,49 @@
         color: #FFF;
         -webkit-animation: bgcolorRandom 3s infinite linear;
       }
+      .login-box {
+        position: relative;
+        margin-left: 15px;
+        height: 100%;
+        padding: 22.5px 0;
+        &>img {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          display: inline-block;
+          cursor: pointer;
+        }
+        &>i{
+          cursor: pointer;
+        }
+        &>ul{
+          position: absolute;
+          min-width: 120px;
+          padding: 10px 20px;
+          background-color: #fff;
+          box-shadow: 0 0 30px rgba(0,0,0,0.07);
+          top: 100%;
+          z-index: 999;
+          transition: all 0.5s cubic-bezier(0.77,0,0.175,1);
+          opacity: 0;
+          transform: translate(-20px,10px);
+          visibility: hidden;
+          border-radius: 5px;
+          li{
+            line-height: 25px;
+          }
+        }
+        &:hover{
+          ul{
+            transform: translate(-20px, -2px);
+            visibility: visible;
+            opacity: 1;
+            li{
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
   }
   &.hide{
@@ -225,34 +277,5 @@
     -webkit-transform: translateY(-80px);
     transform: translateY(-80px);
   }
-
-  // @media screen and (max-width: 750px) {
-  //   box-shadow: 0 0.02rem 0.12rem 0 rgba(0, 0, 0, 0.1);
-  //   .w{
-  //     height: 1rem;
-  //     padding: 0 0.4rem;
-  //     .header-logo{
-  //       width: 1.6rem;
-  //       img{
-  //         width: 2rem;
-  //         height: 0.5rem;
-  //       }
-  //       &::after{
-  //         width: 0.01rem;
-  //         height: 0.4rem;
-  //         right: -0.4rem;
-  //       }
-  //     }
-  //     .header-nav{
-  //       display: none;
-  //     }
-  //     .haeder-login{
-  //       width: 2rem;
-  //       span{
-  //         font-size: 0.16rem;
-  //       }
-  //     }
-  //   }
-  // }
 }
 </style>

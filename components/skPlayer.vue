@@ -1,5 +1,5 @@
 <template>
-  <div class="skPlayer-wrap" :class="iscloseSkPlayer?'':'none'">
+  <div :class="iscloseSkPlayer?'':'none'" class="skPlayer-wrap">
     <div id="skPlayer"></div>
     <div class="canvasBox">
       <!-- <canvas id='canvas' width="575" height="350"></canvas> -->
@@ -10,7 +10,7 @@
 <script>
   // import player from '../plugins/skPlayer.js'
   export default {
-    name: 'skPlayer',
+    name: 'SkPlayer',
     components: {
     },
     props:{
@@ -25,8 +25,6 @@
     computed: {
     },
     created() {
-      if(process.client) {
-      }
     },
     mounted() {
       this.player = new skPlayer({
@@ -48,31 +46,34 @@
             // ... playlist?id=317921676
         }
       })
-      window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
+      window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext
       let that = this
       setTimeout(()=>{
         // that.initCavans()
         // var music = document.querySelector('.skPlayer-source');//获取ID
-        // console.log(music.paused);
+        // console.log(music.paused)
         // if (music.paused) { //判读是否播放
         //     this.player.play(); //没有就播放 
-        //     console.log(this.player);
+        //     console.log(this.player)
         // }
       },500)
     },
+    destroyed() {
+      this.player.destroy()
+    },
     methods: {
       initCavans() {
-        var audio = document.querySelector('.skPlayer-source');
-        var ctx = new AudioContext();
-        var analyser = ctx.createAnalyser();
-        var audioSrc = ctx.createMediaElementSource(audio);
+        var audio = document.querySelector('.skPlayer-source')
+        var ctx = new AudioContext()
+        var analyser = ctx.createAnalyser()
+        var audioSrc = ctx.createMediaElementSource(audio)
         // we have to connect the MediaElementSource with the analyser 
-        audioSrc.connect(analyser);
-        analyser.connect(ctx.destination);
+        audioSrc.connect(analyser)
+        analyser.connect(ctx.destination)
         // we could configure the analyser: e.g. analyser.fftSize (for further infos read the spec)
         // analyser.fftSize = 64;
         // frequencyBinCount tells you how many values you'll receive from the analyser
-        var frequencyData = new Uint8Array(analyser.frequencyBinCount);
+        var frequencyData = new Uint8Array(analyser.frequencyBinCount)
 
         // we're ready to receive some data!
         var canvas = document.getElementById('canvas'),
@@ -83,41 +84,38 @@
             capHeight = 2,
             capStyle = '#fff',
             meterNum = 800 / (10 + 2), //count of the meters
-            capYPositionArray = []; ////store the vertical position of hte caps for the preivous frame
-        ctx = canvas.getContext('2d');
-        var gradient = ctx.createLinearGradient(0, 0, 0, 300);
-        gradient.addColorStop(1, '#0f0');
-        gradient.addColorStop(0.5, '#ff0');
-        gradient.addColorStop(0, '#f00');
+            capYPositionArray = [] ////store the vertical position of hte caps for the preivous frame
+        ctx = canvas.getContext('2d')
+        var gradient = ctx.createLinearGradient(0, 0, 0, 300)
+        gradient.addColorStop(1, '#0f0')
+        gradient.addColorStop(0.5, '#ff0')
+        gradient.addColorStop(0, '#f00')
         // loop
         function renderFrame() {
-            var array = new Uint8Array(analyser.frequencyBinCount);
-            analyser.getByteFrequencyData(array);
-            var step = Math.round(array.length / meterNum); //sample limited data from the total array
-            ctx.clearRect(0, 0, cwidth, cheight);
+            var array = new Uint8Array(analyser.frequencyBinCount)
+            analyser.getByteFrequencyData(array)
+            var step = Math.round(array.length / meterNum) //sample limited data from the total array
+            ctx.clearRect(0, 0, cwidth, cheight)
             for (var i = 0; i < meterNum; i++) {
-                var value = array[i * step];
+                var value = array[i * step]
                 if (capYPositionArray.length < Math.round(meterNum)) {
-                    capYPositionArray.push(value);
-                };
-                ctx.fillStyle = capStyle;
+                    capYPositionArray.push(value)
+                }
+                ctx.fillStyle = capStyle
                 //draw the cap, with transition effect
                 if (value < capYPositionArray[i]) {
-                    ctx.fillRect(i * 12, cheight - (--capYPositionArray[i]), meterWidth, capHeight);
+                    ctx.fillRect(i * 12, cheight - (--capYPositionArray[i]), meterWidth, capHeight)
                 } else {
-                    ctx.fillRect(i * 12, cheight - value, meterWidth, capHeight);
-                    capYPositionArray[i] = value;
-                };
-                ctx.fillStyle = gradient; //set the filllStyle to gradient for a better look
-                ctx.fillRect(i * 12 /*meterWidth+gap*/ , cheight - value + capHeight, meterWidth, cheight); //the meter
+                    ctx.fillRect(i * 12, cheight - value, meterWidth, capHeight)
+                    capYPositionArray[i] = value
+                }
+                ctx.fillStyle = gradient //set the filllStyle to gradient for a better look
+                ctx.fillRect(i * 12 /*meterWidth+gap*/ , cheight - value + capHeight, meterWidth, cheight) //the meter
             }
-            requestAnimationFrame(renderFrame);
+            requestAnimationFrame(renderFrame)
         }
-        renderFrame();
+        renderFrame()
       }
-    },
-    destroyed() {
-      this.player.destroy();
     }
   }
 </script>
