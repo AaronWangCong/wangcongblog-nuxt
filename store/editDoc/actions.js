@@ -3,8 +3,10 @@ import { Notification } from 'element-ui'
 
 export default {
   // 新增编辑文章
-  async modifyDocA ({state, commit, dispatch}, params) {
+  async modifyDocA ({state, commit, dispatch, rootState}, params) {
     commit('changeSubmitLoading', true)
+    state.editForm.author = rootState.login.userInfo.nick_name
+    state.editForm.uid = rootState.login.userInfo.uid
     let res = await modifyDoc(state.editForm)
     if (res.flag) {
       commit('changeSubmitLoading', false)

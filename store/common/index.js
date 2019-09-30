@@ -30,7 +30,17 @@ const state = () => {
       category_name: '',
       category_id: ''
     },
-    categoryList: []
+    categoryList: [],
+    articleImgForm: {
+      imgtype: 'logo',
+      pagingDto: {
+        pageSize: 10,
+        pageNo: 1,
+        pageTotal: 0
+      }
+    },
+    articleImgList: [],
+    articleImgLoading: false
   }
 }
 

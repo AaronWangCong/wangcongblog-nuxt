@@ -1,4 +1,4 @@
-import { noticeMessige, articleList, removeDoc } from '../../lib/api'
+import { noticeMessige, articleList, removeDoc, articleDetaile, articleListUpDown } from '../../lib/api'
 import { Notification } from 'element-ui'
 export default {
   // 获取消息通知
@@ -24,6 +24,24 @@ export default {
     if (res) {
       Notification({ title: '提示', message: '删除成功！', type: 'success' });
       dispatch('articleListA')
+    }
+  },
+
+
+  async articleDetaileA ({state, commit, dispatch}, params) {
+    commit('cleararticleDetaile')
+    commit('changeloading', true)
+    let res = await articleDetaile(params);
+    if (res) {
+      commit('changeloading', false)
+      commit('articleDetaileM', res)
+    }
+  },
+  // 查询文章上下篇的id
+  async articleListUpDownA ({state, commit, dispatch}, params) {
+    let res = await articleListUpDown(params);
+    if (res.flag) {
+      commit('articleListUpDownm', res)
     }
   }
 }

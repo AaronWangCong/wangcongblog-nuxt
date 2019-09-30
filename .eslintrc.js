@@ -38,6 +38,7 @@ module.exports = {
     }],
     "no-undef": 0,
     "vue/html-indent": 0,
-    "semi": 0
+    "semi": 0,
+    "vue/require-valid-default-prop": 0
   }
 }

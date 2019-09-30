@@ -69,25 +69,27 @@
         <h2 class="part-title">最新文章</h2>
         <div class="card-item-box">
           <div v-for="(item, index) in articleListInfo" :key="index" class="card-item">
-            <article>
-              <div :class="isShowImg ? 'lazyloaded' : ''" class="article-img"><img v-lazy="item.imgUrl" alt=""></div>
-              <div class="article-text">
-                <div class="article-text-photo"><span><img src="../assets/images/photo.jpg" alt=""></span></div>
-                <!-- <div class="article-text-tag"><span v-for="label in item.category" :key="label">{{ label }}</span></div> -->
-                <div class="article-text-tag">
-                  <span :style="'background:' + item.random_color + ';'" class="tag-cel"></span>
-                  <span :style="'color:' + item.random_color + ';'" class="tag-text">{{ item.category }}</span>
-                  <nuxt-link v-if="auth" :to="{path: '/editDoc', query:{id:item.id} }"><i class="el-icon-edit"></i></nuxt-link>
-                  <a><i v-if="auth" class="el-icon-delete" @click="delDoc(item)"></i></a>
+            <nuxt-link :to="{path: '/docDetaile/' + item.title, query:{id: item.id, category: item.category}}" target="_blank">
+              <article>
+                <div :class="isShowImg ? 'lazyloaded' : ''" class="article-img"><img v-lazy="item.imgUrl" alt=""></div>
+                <div class="article-text">
+                  <div class="article-text-photo"><span><img src="../assets/images/photo.jpg" alt=""></span></div>
+                  <!-- <div class="article-text-tag"><span v-for="label in item.category" :key="label">{{ label }}</span></div> -->
+                  <div class="article-text-tag">
+                    <span :style="'background:' + item.random_color + ';'" class="tag-cel"></span>
+                    <span :style="'color:' + item.random_color + ';'" class="tag-text">{{ item.category }}</span>
+                    <nuxt-link v-if="auth" :to="{path: '/editDoc', query:{id:item.id} }"><i class="el-icon-edit"></i></nuxt-link>
+                    <a><i v-if="auth" class="el-icon-delete" @click="delDoc(item)"></i></a>
+                  </div>
+                  <div class="article-text-title">{{ item.title }}</div>
+                  <div class="article-text-content">{{ item.summary }}</div>
+                  <div class="article-text-footer">
+                    <span class="last-update">{{ item.create_time }}</span>
+                    <span class="see-time"><i class="iconfont icon-liulan"></i> 999</span>
+                  </div>
                 </div>
-                <div class="article-text-title">{{ item.title }}</div>
-                <div class="article-text-content">{{ item.summary }}</div>
-                <div class="article-text-footer">
-                  <span class="last-update">{{ item.create_time }}</span>
-                  <span class="see-time"><i class="iconfont icon-liulan"></i> 999</span>
-                </div>
-              </div>
-            </article>
+              </article>
+            </nuxt-link>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { getIndexBg, getBaiDuTongJi, modifyCategory, category } from '../../lib/api'
+import { getIndexBg, getBaiDuTongJi, modifyCategory, category, articleImg } from '../../lib/api'
 import { Notification } from 'element-ui'
 export default {
   async getIndexBgA ({state, commit, dispatch}, params) {
@@ -28,6 +28,17 @@ export default {
     let res = await category()
     if (res.flag) {
       commit('categoryM', res)
+    }
+  },
+  // 查询文章详情图片和封面
+  async articleImgA ({state, commit, dispatch}, params) {
+    state.articleImgLoading = true
+    let res = await articleImg(state.articleImgForm)
+    if (res.flag) {
+      commit('articleImgM', res)
+      state.articleImgLoading = false
+    } else {
+      state.articleImgLoading = false
     }
   }
 }

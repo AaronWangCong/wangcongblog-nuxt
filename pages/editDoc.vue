@@ -31,7 +31,7 @@
           <el-input v-model="editForm.summary" placeholder="请输入文章摘要" clearable></el-input>
         </el-form-item>
 
-        <el-form-item label="文章图片" prop="imgUrl">
+        <el-form-item label="文章封面" prop="imgUrl" class="articleUpload">
           <el-upload
             :show-file-list="false"
             :http-request="articleUploadChange"
@@ -41,6 +41,7 @@
             <img v-if="editForm.imgUrl" :src="editForm.imgUrl" class="avatar">
             <i v-else class="el-icon-plus avatar-uploader-icon"></i>
           </el-upload>
+          <div><el-button type="danger" plain @click="articleImgDialogVisible = true">从现有封面添加</el-button></div>
         </el-form-item>
 
         <el-form-item label="文章内容" prop="content">
@@ -99,6 +100,23 @@
         <el-button type="primary" @click="modifyCategory('editCategoryForm')">确 定</el-button>
       </span>
     </el-dialog>
+
+    <!-- 添加文章封面 -->
+    <el-dialog :visible.sync="articleImgDialogVisible" :close-on-click-modal="false" title="添加文章封面" width="800px">
+      <div class="articleImg">
+        <div class="articleImg-head"><span :class="articleImgForm.imgtype === 'logo' ? 'on' : ''" @click="changeArticleImg('logo')">文章封面</span><span :class="articleImgForm.imgtype === 'detaile' ? 'on' : ''" @click="changeArticleImg('detaile')">文章详情</span></div>
+        <div v-loading="articleImgLoading" class="articleImg-list">
+          <span v-for="(item, index) in articleImgList" :key="index" @click="selectArticleImg(item)">
+            <img :src="item.imgurl" alt="">
+          </span>
+        </div>
+        <!-- 分页 -->
+        <Pagination v-model="articleImgForm.pagingDto" @onSearch="articleImgListSearch()"></Pagination>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="articleImgDialogVisible = false">关 闭</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -107,10 +125,12 @@
   import { mapState, mapActions, mapMutations } from 'vuex'
   import { upimgFiles, recognizeFile } from '../lib/api'
   import Cookies from 'js-cookie'
+  import Pagination from "../components/Pagination.vue";
   export default {
     name: '',
     components: {
-      mavonEditor
+      mavonEditor,
+      Pagination
     },
     props:{
     },
@@ -175,7 +195,8 @@
         },
         quillUpdateImg: false, // 根据图片上传状态来确定是否显示loading动画，刚开始是false,不显示
         img_file: [],
-        editCategoryDialogVisible: false
+        editCategoryDialogVisible: false,
+        articleImgDialogVisible: false
       }
     },
     computed: {
@@ -188,7 +209,10 @@
 
         editCategoryForm: state => state.common.editCategoryForm,
         reseteditCategoryForm: state => state.common.reseteditCategoryForm,
-        categoryList: state => state.common.categoryList
+        categoryList: state => state.common.categoryList,
+        articleImgForm: state => state.common.articleImgForm,
+        articleImgList: state => state.common.articleImgList,
+        articleImgLoading: state => state.common.articleImgLoading
       }),
       editor () {
         return this.$refs.myQuillEditor.quill
@@ -198,6 +222,7 @@
     },
     created() {
       this.categoryA()
+      this.articleImgListSearch(1)
       if (this.$route.query.id) {
         this.articleDetaileA({id: this.$route.query.id})
         this.editForm.id = this.$route.query.id
@@ -211,7 +236,7 @@
       }
     },
     methods: {
-      ...mapActions('common', ['categoryA', 'modifyCategoryA']),
+      ...mapActions('common', ['categoryA', 'modifyCategoryA', 'articleImgA']),
       ...mapActions('editDoc', ['modifyDocA', 'articleDetaileA', 'articleUpimgFilesA']),
       ...mapMutations('editDoc', ['clearEditForm']),
 
@@ -329,6 +354,20 @@
         let obj= this.categoryList.find(i =>i.category_id === val)
         this.editForm.category = obj.category_name
         this.editForm.random_color = obj.random_color
+      },
+      articleImgListSearch (val) {
+        if (val) {
+          this.articleImgForm.pagingDto.pageNo = 1
+        }
+        this.articleImgA()
+      },
+      changeArticleImg (val) {
+        this.articleImgForm.imgtype = val
+        this.articleImgListSearch(1)
+      },
+      selectArticleImg (item) {
+        this.editForm.imgUrl = item.imgurl
+        this.articleImgDialogVisible = false
       }
     },
   }
@@ -391,6 +430,11 @@
         margin-top: 10px;
       }
     }
+    .articleUpload{
+      .el-form-item__content{
+        display: flex;
+      }
+    }
   }
   .change-edit{
     display: flex;
@@ -418,6 +462,44 @@
       .avatar{
         width: 100%;
         height: 100%;
+      }
+    }
+  }
+  .articleImg{
+    .articleImg-head{
+      span{
+        cursor: pointer;
+        padding: 5px 10px;
+        margin-right: 15px;
+        display: inline-block;
+        font-size: 16px;
+        color: #666;
+        border: 1px solid #666;
+        &:hover,
+        &.on{
+          background-color: #666;
+          color: #fff;
+        }
+      }
+    }
+    .articleImg-list{
+      border: 1px solid #666;
+      min-height: 200px;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 10px;
+      margin-top: 10px;
+      span{
+        width: 270px;
+        height: 180px;
+        overflow: hidden;
+        cursor: pointer;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }

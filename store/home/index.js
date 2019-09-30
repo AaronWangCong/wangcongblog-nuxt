@@ -14,7 +14,11 @@ const state = () => {
         pageNo: 1,
         pageTotal: 0
       }
-    }
+    },
+
+
+    arricleDetailLoading: false,
+    pageUpDown: [],
   }
 }
 

@@ -4,5 +4,8 @@ export default {
   },
   categoryM (state, data) {
     state.categoryList = data.rows
+  },
+  articleImgM (state, data) {
+    state.articleImgList = data.rows
   }
 }
