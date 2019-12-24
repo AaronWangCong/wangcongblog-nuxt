@@ -2,13 +2,13 @@
   <div class="video-wrap" @mouseover="isPlayBtn = true" @mouseout="isPlayBtn = false" @click="changePlay()">
     <video id="test_video"
       :controls="false"
-      :autoplay="false"
-      :muted="false"
-      loop="loop"
+      autoplay
+      loop
+      muted
       webkit-playsinline playsinline 
-      src="/video/index01.mp4" 
+      src="/video/tianqizhizi02.mp4" 
       preload="auto"
-      style="object-fit:fill;width:960px;"
+      style="object-fit:fill;"
       poster=""
       x5-video-player-type="h5"
       x5-video-player-fullscreen="true"
@@ -28,16 +28,13 @@ export default {
   layout: "",
   data() {
     return {
-      changePlayText: "播放",
+      changePlayText: "暂停",
       isPlayBtn: false
     }
   },
   computed: {},
   created() {},
   mounted() {
-    document.querySelector("#test_video").paused
-      ? (this.changePlayText = "播放")
-      : (this.changePlayText = "暂停")
     document.addEventListener(
       "WeixinJSBridgeReady",
       function() {
@@ -45,12 +42,12 @@ export default {
       },
       false
     )
-    let width = window.innerWidth / 2
+    let width = window.innerWidth
     if (width < 1000) width = 1000
     test_video.style.width = width + "px"
-    test_video.style.height = window.innerHeight / 2 + "px"
+    test_video.style.height = window.innerHeight + "px"
     if (window.innerWidth <= 750) {
-      test_video.style.width = window.innerWidth - 20 + "px"
+      test_video.style.width = window.innerWidth + "px"
     }
     // window.onresize = function(){
     //   test_video.style.width = window.innerWidth/2 + "px"

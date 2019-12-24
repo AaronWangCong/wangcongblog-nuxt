@@ -5,7 +5,7 @@
       <nuxt />
     </div>
     <Footer />
-    <skPlayer />
+    <!-- <skPlayer /> -->
 
     <!-- 首页通知 -->
     <NoticeMessige />

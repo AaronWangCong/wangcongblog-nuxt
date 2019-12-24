@@ -1,12 +1,20 @@
 <template>
   <div class="index-wrap">
-    <div class="index-wrap-content w">
-      <indexVideo class="bilibili" />
-      <nuxt-link to="/home" class="homeBtn">网站建设中,进入主站</nuxt-link>
-    </div>
+    <!-- <div class="index-wrap-content w"> -->
+      <!-- <indexVideo class="bilibili" /> -->
+      <!-- <nuxt-link to="/home" class="homeBtn">网站建设中,进入主站</nuxt-link> -->
+    <!-- </div> -->
     <iframe id="bg-iframe" src="./index_bg.html" class="iframeParent" frameborder="0" width="100%" height="100%"></iframe>
-    <!-- 首页通知 -->
-    <!-- <NoticeMessige /> -->
+
+    <div class="index-wrap-per">
+      <div class="per-logo">
+        <img src="../assets/images/photo.jpg" alt="">
+      </div>
+      <div class="per-name">
+        AWC AaronWangCong
+        <p><nuxt-link to="/home" class="homeBtn">进入主站</nuxt-link></p>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -35,7 +43,7 @@
       this.getBaiDuTongJiA()
     },
     mounted() {
-      this.getIndexBgA()
+      // this.getIndexBgA()
     },
     methods: {
       ...mapActions('common', ['getIndexBgA', 'getBaiDuTongJiA'])
@@ -44,8 +52,8 @@
 </script>
 <style lang="scss">
 .index-wrap{
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   #bg-iframe {
     width: 100%;
     height: 100%;
@@ -90,6 +98,33 @@
         margin-top: 1rem;
         font-size: 0.4rem;
         width: 100%;
+      }
+    }
+  }
+  .index-wrap-per{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .per-logo{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .per-name{
+      padding: 20px 0;
+      color: #fff;
+      p{
+        text-align: center;
+        padding: 20px 0;
       }
     }
   }

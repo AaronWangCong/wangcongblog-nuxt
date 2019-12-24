@@ -3,7 +3,7 @@
     <div class="content">
       <nuxt />
     </div>
-    <skPlayer />
+    <!-- <skPlayer /> -->
   </div>
 </template>
 <script>
