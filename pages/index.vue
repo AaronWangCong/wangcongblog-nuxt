@@ -1,7 +1,7 @@
 <template>
   <div class="index-wrap">
-    <indexVideo />
-    <div class="index-wrap-content">
+    <indexVideo @onClick="onClick" />
+    <div v-if="isShowText" class="index-wrap-content">
       <span :class="isAnimate ? 'animated rubberBand infinite' : ''" class="index-logo" @mouseenter="mouseenter" @mouseleave="mouseleave"><img src="../assets/images/favicon.jpg" alt=""></span>
       <h2 class="index-title animated rollIn fast">Aaron汪聪</h2>
       <div class="index-text animated rollIn fast">
@@ -40,7 +40,8 @@
     layout:'',
     data() {
       return {
-        isAnimate: false
+        isAnimate: false,
+        isShowText: true
       }
     },
     computed: {
@@ -60,6 +61,9 @@
       },
       mouseleave () {
         this.isAnimate = false
+      },
+      onClick () {
+        this.isShowText = !this.isShowText
       }
     },
   }

@@ -1,7 +1,7 @@
 <template>
-  <div class="video-wrap">
+  <div class="video-wrap" @click="showText()">
     <video id="index-video" autoplay loop muted class="index-video">
-      <source src="/video/snow.mp4" type="video/mp4" >
+      <source src="/video/愤怒的小鸟愤怒的舔屏.mp4" type="video/mp4" >
     </video>
   </div>
 </template>
@@ -25,12 +25,16 @@ export default {
     }
   },
   methods: {
+    showText () {
+      this.$emit('onClick')
+    }
   }
 }
 </script>
 <style lang="scss">
 .video-wrap {
   width: 100%;
+  height: 100%;
   .index-video{
     position: fixed;  
     left: 0;
