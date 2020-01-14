@@ -10,15 +10,13 @@ export default {
       { hid: 'description', name: 'description', content: 'AWC汪聪是汪聪个人门户网站的主站，包括html、CSS、vue、nuxt、javascript、小程序、pm2等技术知识，致力于打造一份符合自己编码风格的独立站点。' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/icon05.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.jpg' },
       { rel: 'stylesheet', type: 'text/css', href: 'http://at.alicdn.com/t/font_956898_dmazn3p75bp.css' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css' },
     ],
     script: [
       { src: 'http://res.wx.qq.com/open/js/jweixin-1.1.0.js'},
-      // { src:'//code.tidio.co/irncccg0ddbkejvx8en2lvgwcuebnssz.js', type: 'text/javascript', charset: 'utf-8'},
-      // { src: './pubu/pixi.min.js'},
-      // { src: './pubu/tinycolor.min.js'},
-      { src: './skPlayer.min.js'}
+      { src:'//code.tidio.co/irncccg0ddbkejvx8en2lvgwcuebnssz.js', type: 'text/javascript', charset: 'utf-8'},
     ],
     __dangerouslyDisableSanitizers: ['script']
   },
@@ -31,13 +29,9 @@ export default {
   ],
   plugins: [
     { src: "@/plugins/antd-ui", ssr: true },
-    { src: "@/plugins/element-ui", ssr: true },
-    // { src: "@/plugins/skPlayer", ssr: false },
     { src: "@/plugins/baidutuisong", ssr: false },
-    { src: "@/plugins/fullpage", ssr: false },
     { src: "@/plugins/baseDomain", ssr: true },
     { src: "@/plugins/vue-lazyload", ssr: false },
-    // { src: "@/plugins/monitors-js", ssr: false }
   ],
   modules: [
     '@nuxtjs/proxy'

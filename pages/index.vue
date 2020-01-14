@@ -1,18 +1,26 @@
 <template>
   <div class="index-wrap">
-    <!-- <div class="index-wrap-content w"> -->
-      <!-- <indexVideo class="bilibili" /> -->
-      <!-- <nuxt-link to="/home" class="homeBtn">网站建设中,进入主站</nuxt-link> -->
-    <!-- </div> -->
-    <iframe id="bg-iframe" src="./index_bg.html" class="iframeParent" frameborder="0" width="100%" height="100%"></iframe>
-
-    <div class="index-wrap-per">
-      <div class="per-logo">
-        <img src="../assets/images/photo.jpg" alt="">
+    <indexVideo />
+    <div class="index-wrap-content">
+      <span :class="isAnimate ? 'animated rubberBand infinite' : ''" class="index-logo" @mouseenter="mouseenter" @mouseleave="mouseleave"><img src="../assets/images/favicon.jpg" alt=""></span>
+      <h2 class="index-title animated rollIn fast">Aaron汪聪</h2>
+      <div class="index-text animated rollIn fast">
+        <p>乙丑岁赴试并州，道逢捕雁者云：“今旦获一雁，杀之矣。其脱网者悲鸣不能去，竟自投于地而死。”予因买得之，葬之汾水之上，垒石为识，号曰“雁丘”。同行者多为赋诗，予亦有《雁丘词》。旧所作无宫商，今改定之。</p>
+        <p>问世间，情为何物，直教生死相许？</p>
+        <p>天南地北双飞客，老翅几回寒暑。</p>
+        <p>欢乐趣，离别苦，就中更有痴儿女。</p>
+        <p>君应有语：渺万里层云，千山暮雪，只影向谁去？</p>
+        <p>横汾路，寂寞当年箫鼓，荒烟依旧平楚。</p>
+        <p>招魂楚些何嗟及，山鬼暗啼风雨。</p>
+        <p>天也妒，未信与，莺儿燕子俱黄土。</p>
+        <p>千秋万古，为留待骚人，狂歌痛饮，来访雁丘处。</p>
       </div>
-      <div class="per-name">
-        AWC AaronWangCong
-        <p><nuxt-link to="/home" class="homeBtn">进入主站</nuxt-link></p>
+
+      <nuxt-link to="/home" class="homeBtn animated jackInTheBox fast">网站建设中,进入主站</nuxt-link>
+
+      <div class="copyright animated bounceInUp slow">
+        <p>AWC Licensed | 版权所有 © 2019  Power by 汪聪</p>
+        <p>Copyright © 2019-present AaronWangCong <a href="http://beian.miit.gov.cn" target="_blank">鄂ICP备18027009号-1</a></p>
       </div>
     </div>
   </div>
@@ -32,21 +40,27 @@
     layout:'',
     data() {
       return {
+        isAnimate: false
       }
     },
     computed: {
       ...mapState({
-        indexBg: state => state.common.indexBg
       })
     },
     created() {
       this.getBaiDuTongJiA()
     },
     mounted() {
-      // this.getIndexBgA()
     },
     methods: {
-      ...mapActions('common', ['getIndexBgA', 'getBaiDuTongJiA'])
+      ...mapActions('common', ['getBaiDuTongJiA']),
+
+      mouseenter () {
+        this.isAnimate = true
+      },
+      mouseleave () {
+        this.isAnimate = false
+      }
     },
   }
 </script>
@@ -54,78 +68,54 @@
 .index-wrap{
   width: 100vw;
   height: 100vh;
-  #bg-iframe {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    border: 0;
-    overflow: hidden;
-  }
+  position: fixed;
+  overflow: hidden;
   .index-wrap-content{
-    position: fixed;
-    align-items: center;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -60%);
-    display: flex;
-    flex-direction: column;
-    z-index: 99999;
-    padding: 20px;
-    .homeBtn{
-      width: 400px;
-      color: #fff;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-      display: inline-block;
-      margin-top: 40px;
-      &:hover{
-        color: rgb(24, 118, 226);
-      }
-    }
-    .bilibili{
-      box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.7);
-    }
-    @media screen and (max-width: 750px) {
-      flex-direction: column;
-      width: 100%;
-      padding: 0;
-      .homeBtn{
-        margin-top: 1rem;
-        font-size: 0.4rem;
-        width: 100%;
-      }
-    }
-  }
-  .index-wrap-per{
     position: absolute;
-    left: 50%;
+    z-index: 10;
     top: 50%;
-    transform: translate(-50%,-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    .per-logo{
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1000px;
+    text-shadow:5px 2px 6px #000;
+    .index-logo{
       width: 100px;
       height: 100px;
       border-radius: 50%;
       overflow: hidden;
+      cursor: pointer;
       img{
         width: 100%;
         height: 100%;
       }
     }
-    .per-name{
-      padding: 20px 0;
+    .index-title{
+      font-size: 24px;
+      font-weight: bold;
       color: #fff;
+      padding: 20px 0;
+      margin: 0;
+    }
+    .index-text{
+      color: rgb(243, 242, 239);
+      text-align: center;
       p{
-        text-align: center;
-        padding: 20px 0;
+        font-size: 18px;
+        line-height: 25px;
       }
+    }
+    .homeBtn {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .copyright{
+      text-align: center;
+      color: #fff;
+      margin-top: 50px;
     }
   }
 }
