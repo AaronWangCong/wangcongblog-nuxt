@@ -21,7 +21,7 @@ export default {
     ],
     __dangerouslyDisableSanitizers: ['script']
   },
-  loading: { color: '#fff' },
+  loading: '@/components/loading.vue',
   css: [
     'element-ui/lib/theme-chalk/index.css',
     'ant-design-vue/dist/antd.css',
