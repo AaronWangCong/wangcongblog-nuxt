@@ -33,7 +33,7 @@
         var width = html.getBoundingClientRect().width
         html.style.fontSize = width / 7.5 + "px"
         //1rem=100
-      }
+      },
     }
   }
 </script>
