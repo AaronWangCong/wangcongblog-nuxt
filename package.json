@@ -42,6 +42,7 @@
     "nuxt-fullpage.js": "^0.0.3",
     "qs": "^6.8.0",
     "sass-loader": "^7.1.0",
-    "vue-style-loader": "^4.1.2"
+    "vue-style-loader": "^4.1.2",
+    "wowjs": "^1.1.3"
   }
 }
