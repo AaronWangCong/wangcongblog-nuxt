@@ -13,7 +13,7 @@
     <div class="home-wrap-slogan">
       <div class="w">
         <div class="blue"><i class="iconfont icon-huati"></i> 通知</div>
-          <message-carousel v-if="noticeMessigeInfo && noticeMessigeInfo.length" :data-list="noticeMessigeInfo">
+          <message-carousel v-if="noticeMessigeInfo.dataList && noticeMessigeInfo.dataList.length" :data-list="noticeMessigeInfo.dataList">
             <template slot-scope="{ row }">
               <nuxt-link :to="{ path: '/home',params: { id: 1 } }" :style="'color:' + row.random_color" tag="div" class="message-box ellipsis">
                 <span class="message-date">{{ row.create_time }}</span>&nbsp;&nbsp;&nbsp;&nbsp;{{ row.msg }}
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <!-- <div class="home-wrap-category">
+    <div class="home-wrap-category">
       <div class="w">
         <h2 class="part-title">文章分类</h2>
         <div class="card-item-box">
@@ -53,7 +53,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
     <div class="home-wrap-categoryLabel">
       <div class="w">
@@ -152,13 +152,13 @@
       })
     },
     created() {
-      this.noticeMessigeA()
+      // this.noticeMessigeA()
       this.articleListA()
-      this.categoryA()
+      // this.categoryA()
     },
     mounted() {},
     methods: {
-      ...mapActions('common', ['categoryA']),
+      // ...mapActions('common', ['categoryA']),
       ...mapActions('home', ['noticeMessigeA','articleListA', 'removeDocA']),
 
 

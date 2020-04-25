@@ -1,7 +1,9 @@
 import { noticeMessige, articleList, removeDoc, articleDetaile, articleListUpDown } from '../lib/api'
 
 const state = () => ({
-  noticeMessigeInfo: [],
+  noticeMessigeInfo: {
+    dataList: []
+  },
   articleListInfo: [],
   articleLoading: false,
   searchForm: {
@@ -67,7 +69,7 @@ const actions = {
 
 const mutations = {
   noticeMessigeM(state, data) {
-    state.noticeMessigeInfo = data.rows
+    state.noticeMessigeInfo.dataList = data.rows
   },
   articleListM(state, data) {
     state.articleListInfo = data.rows

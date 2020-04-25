@@ -1,4 +1,5 @@
 import { loginApi, getUserInfoApi, logoutApi } from "../lib/api";
+import Cookies from 'js-cookie'
 
 const state = () => ({
   auth: null,
